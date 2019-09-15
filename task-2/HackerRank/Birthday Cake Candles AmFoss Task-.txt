@@ -1,0 +1,44 @@
+//java
+import java.util.*;
+import java.util.regex.*;
+public class BirthdayCakeCandles{
+public static void main(String[] args){
+String canHt,snumcan;
+Integer numcan;
+//System.out.println("Hello World");
+Scanner obj_In=new Scanner(System.in);
+snumcan=obj_In.nextLine();
+//System.out.println("Hello World");
+canHt=obj_In.nextLine();
+canHt=canHt+(" ");
+numcan=Integer.parseInt(snumcan);
+int a[]=new int[numcan],i=0,ncanh;
+String scanh;
+Pattern p=Pattern.compile("(.*?) ");
+Matcher m=p.matcher(canHt);
+
+while(m.find()){
+scanh=m.group(1);
+ncanh=Integer.parseInt(scanh);
+//System.out.println(ncanh);
+a[i]=ncanh;
+i=i+1;
+}
+Integer max;
+max = a[0];
+        for(int j = 0; j < numcan; j=j+1)
+        {
+            if(max < a[j])
+            {
+                max = a[j];
+            }
+        }
+//System.out.println(max);
+Integer count=0;
+for(int l=0;l<numcan;l=l+1){
+if(a[l]==max){
+count=count+1;
+}
+}
+System.out.println(count);
+}}
