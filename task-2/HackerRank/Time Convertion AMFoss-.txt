@@ -1,0 +1,40 @@
+import java.util.*;
+import java.util.regex.*;
+public class Time_Conversion{
+public static void main(String[] args){
+Scanner myObj_In = new Scanner(System.in); 
+ArrayList<String> timeArray=new ArrayList <String>();
+String time=myObj_In.nextLine();
+String t_m=time+":",a;
+Integer sepadd,ht,mt,st,l=0,htd,std,mtd,o=0;
+Pattern p=Pattern.compile("(.*?):");
+Matcher m=p.matcher(t_m);
+while(m.find()){
+a=m.group(1);
+timeArray.add(a);
+}
+String hrs_s=timeArray.get(0),min_s=timeArray.get(1),sec_samp=timeArray.get(2);
+String amp=sec_samp.substring(2);
+String sec=sec_samp.substring(0,2);
+Integer hrs_i=Integer.parseInt(hrs_s);
+if(amp.compareTo("AM")==0){
+if(hrs_i==12){
+hrs_i=0;
+}
+else{}
+}
+else if (amp.compareTo("PM")==0){
+if(hrs_i==12){
+}
+else
+hrs_i=hrs_i+12;
+}
+else System.out.println("Wrong Input");
+String hours_out;
+hours_out=Integer.toString(hrs_i);
+if(hours_out.length()==1){
+hours_out="0"+hours_out;}
+else{}
+System.out.println(hours_out+":"+min_s+":"+sec);
+}
+}
