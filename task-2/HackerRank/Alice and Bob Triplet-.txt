@@ -1,0 +1,73 @@
+import java.util.*;
+import java.util.regex.*;
+public class Triplets_Game{
+public static void main(String[] args){
+Scanner myObj_In = new Scanner(System.in);  // Create a Scanner object
+//System.out.println("resultRatingsAlice");
+    String rate_A = myObj_In.nextLine(),a,b; //Read User Input
+    //System.out.println("resultRatingsBob");
+    Integer ai=0;
+    String rate_B = myObj_In.nextLine(); //Read User Input
+  ArrayList<String> Alice_Ratings = new ArrayList<String>();
+    ArrayList<String> Bob_Ratings = new ArrayList<String>();
+    ArrayList<String> Result = new ArrayList<String>();
+    Pattern pa=Pattern.compile("(.*?) ");
+Matcher ma=pa.matcher(rate_A);
+while(ma.find()){
+a=ma.group(1);
+Alice_Ratings.add(a);
+}
+       Pattern pb=Pattern.compile("(.*?) ");
+Matcher mb=pb.matcher(rate_B);
+while(mb.find()){
+b=mb.group(1);
+Bob_Ratings.add(b);
+}
+
+String r1a=Alice_Ratings.get(0),r2a=Alice_Ratings.get(1);
+Integer lena=rate_A.indexOf(r2a),lenna=0;
+Integer ar1i=Integer.parseInt(r1a),ar2i=Integer.parseInt(r2a),len1a=r1a.length(),len2a=r2a.length(),lenia=len1a+len2a+2;
+
+String lastad=rate_A.substring(lenia);
+Integer ar3i=Integer.parseInt(lastad);
+
+String r1b=Bob_Ratings.get(0),r2b=Bob_Ratings.get(1);
+Integer lenb=rate_B.indexOf(r2b),lennb=0;
+Integer br1i=Integer.parseInt(r1b),br2i=Integer.parseInt(r2b),len1b=r1b.length(),len2b=r2b.length(),lenib=len1b+len2b+2;
+String lastbd=rate_B.substring(lenib);
+Integer br3i=Integer.parseInt(lastbd),ap1=0,bp1=0;
+if(ar1i>br1i){
+ap1=ap1+1;
+}
+else if (ar1i<br1i){
+bp1=bp1+1;
+}
+else{}
+if(ar2i>br2i){
+ap1=ap1+1;
+}
+else if (ar2i<br2i){
+bp1=bp1+1;
+}
+else{}
+if(ar3i>br3i){
+ap1=ap1+1;
+}
+else if (ar3i<br3i){
+bp1=bp1+1;
+}
+else
+{}
+String ap1s=Integer.toString(ap1),bp1s=Integer.toString(bp1);
+Result.add(ap1s);
+Result.add(bp1s);
+System.out.println(ap1s+" "+bp1s);
+
+
+ 
+
+
+
+    
+   
+}}
