@@ -1,0 +1,40 @@
+import java.util.*;
+public class Absolute_VALUE_Of_Diagonals {
+public static void main(String[] args){
+Scanner myObj_In= new Scanner(System.in);
+//System.out.println("Enter");
+String n=myObj_In.nextLine(),strg;
+Integer num=Integer.parseInt(n),i=0,numb,e=0,sumr=0,p=1,suml=0;
+int a[]=new int [num*num];
+for(int j=0;j<num;j=j+1){
+    //System.out.println("Enter");
+    strg=myObj_In.nextLine();
+    strg=strg+" ";
+    String[] sstrg=strg.split(" ");
+    for(String q:sstrg){
+        numb=Integer.parseInt(q);
+        a[i]=numb;
+        i=i+1;
+    }
+}
+Integer fr,fl,lr,ll,nnum=(num*num)-1,d=0,diff;
+fr=a[0];lr=a[(num*num)-1];
+do{e=e+(num+1);
+sumr=a[e]+sumr;
+    p=p+1;
+}while(p<=num-1);
+sumr=sumr+fr;
+//System.out.println(sumr);
+do{
+    nnum=nnum-(num-1);
+    suml=suml+a[nnum];
+    d=d+1;
+}while(num>d);
+//System.out.println(suml);
+diff=sumr-suml;
+if(diff<0){
+    diff=diff*-1;
+}
+System.out.println(diff);
+}
+}
