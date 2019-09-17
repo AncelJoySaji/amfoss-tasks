@@ -1,0 +1,32 @@
+
+import java.util.*;
+import java.util.regex.*;
+public class WayTooLongWords{
+    public static void main(String[] args){
+        Integer i=0,sc=0;
+       //System.out.println("Hello World");
+        Scanner Obj_In=new Scanner (System.in);
+        String n=Obj_In.nextLine(),m;
+        Integer num=Integer.parseInt(n);
+        String a[]= new String [num],j,f,l,conc;
+     for (int p=0;p<num;p=p+1){
+        // System.out.println("Hello World");
+         m=Obj_In.nextLine();
+         Integer k=m.length();
+         if(k>10){
+             f=m.substring(0,1);
+             l=m.substring(k-1);     
+             j=Integer.toString(k-2);
+             conc=f+j+l;
+             System.out.println(conc);
+         }
+         else{
+             System.out.println(m);
+         }
+         m="";
+         
+     }
+       
+}
+}
+
